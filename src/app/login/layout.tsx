@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "dashboard page",
-  description: "dashboard climat-guardian",
+  title: "Login page",
+  description: "Login to your climat-guardian account",
 };
 
 export default function RootLayout({

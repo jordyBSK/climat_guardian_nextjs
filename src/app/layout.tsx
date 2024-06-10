@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-
 export const metadata: Metadata = {
-  title: "Login page",
+  title: "Home page",
   description: "connect to our site",
 };
 
