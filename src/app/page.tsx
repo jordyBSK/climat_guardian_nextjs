@@ -1,6 +1,5 @@
-export default function Page() {
-  return(
+import {redirect} from "next/navigation";
 
-      <h1 className="text-white font-bold p-6 ">commence le project dans le fichier app/page.tsx</h1>
-  )
+export default function Page() {
+    redirect("/login");
 }
