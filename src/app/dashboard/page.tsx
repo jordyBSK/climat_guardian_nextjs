@@ -1,3 +1,5 @@
+import { Dashboard } from "@/app/ui/DashBoard";
+
 export default function Page() {
-  return <p>Dashboard Page</p>;
+  return <Dashboard />;
 }
