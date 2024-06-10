@@ -215,7 +215,7 @@ export function Dashboard() {
                                   Genesis
                                 </span>
                               </p>
-                              <p className="text-xs" data-description>
+                              <p className="text-xs" data-description="">
                                 Our fastest model for general use cases.
                               </p>
                             </div>
@@ -231,7 +231,7 @@ export function Dashboard() {
                                   Explorer
                                 </span>
                               </p>
-                              <p className="text-xs" data-description>
+                              <p className="text-xs" data-description="">
                                 Performance and speed for efficiency.
                               </p>
                             </div>
@@ -247,7 +247,7 @@ export function Dashboard() {
                                   Quantum
                                 </span>
                               </p>
-                              <p className="text-xs" data-description>
+                              <p className="text-xs" data-description="">
                                 The most powerful model for complex
                                 computations.
                               </p>
@@ -334,7 +334,7 @@ export function Dashboard() {
                                 Genesis
                               </span>
                             </p>
-                            <p className="text-xs" data-description>
+                            <p className="text-xs" data-description="">
                               Our fastest model for general use cases.
                             </p>
                           </div>
@@ -350,7 +350,7 @@ export function Dashboard() {
                                 Explorer
                               </span>
                             </p>
-                            <p className="text-xs" data-description>
+                            <p className="text-xs" data-description="">
                               Performance and speed for efficiency.
                             </p>
                           </div>
@@ -366,7 +366,7 @@ export function Dashboard() {
                                 Quantum
                               </span>
                             </p>
-                            <p className="text-xs" data-description>
+                            <p className="text-xs" data-description="">
                               The most powerful model for complex computations.
                             </p>
                           </div>
