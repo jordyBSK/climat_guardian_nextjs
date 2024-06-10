@@ -1,7 +1,5 @@
-export default function Login() {
-    return (
-        <>
-            <Login />
-        </>
-    );
+import {Login} from "@/app/ui/Login";
+
+export default function Page() {
+    return <Login />
 }
