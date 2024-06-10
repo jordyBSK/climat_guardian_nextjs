@@ -1,6 +1,10 @@
+import LoginElement from "@/app/ui/login/LoginElement";
+
 export default function Page() {
   return(
+      <div className="">
+        <LoginElement/>
+      </div>
 
-      <h1 className="text-white font-bold p-6 ">commence le project dans le fichier app/page.tsx</h1>
   )
 }
