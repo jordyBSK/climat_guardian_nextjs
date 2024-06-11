@@ -3,7 +3,6 @@
 import * as React from "react";
 import { format } from "date-fns";
 import {
-  Badge,
   Bell,
   Calendar as CalendarIcon,
   Home,
@@ -22,32 +21,8 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import {
-  Bird,
-  Book,
-  Bot,
-  Code2,
-  LifeBuoy,
-  Rabbit,
-  Settings,
-  Settings2,
-  Share,
-  SquareTerminal,
-  SquareUser,
-  Triangle,
-  Turtle,
-} from "lucide-react";
-
 import { Button } from "@/components/ui/button";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
-import { Input } from "@/components/ui/input";
+
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -56,15 +31,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+
 import Link from "next/link";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function Dashboard() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
