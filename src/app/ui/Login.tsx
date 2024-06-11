@@ -42,7 +42,12 @@ export function Login() {
         </CardContent>
         <CardFooter className="flex flex-col gap-5">
           <Button className="w-full">Sign in</Button>
-          <a href="/dashboard" className="border-2 border-gray-800 rounded-[7px] w-full text-center p-2 hover:bg-gray-800 hover:text-white">Go to dashboard</a>
+          <a
+            href="/dashboard"
+            className="border-2 border-gray-800 rounded-[7px] w-full text-center p-2 hover:bg-gray-800 hover:text-white"
+          >
+            Go to dashboard
+          </a>
         </CardFooter>
       </Card>
     </div>
