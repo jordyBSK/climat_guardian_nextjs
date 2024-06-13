@@ -7,7 +7,7 @@ import { HomeIcon } from './homeIcon';
 import {PlanIcon} from "@/app/ui/dashboard/planIcon";
 
 const links = [
-    { name: 'Home', href: '/dashboard', icon: HomeIcon },
+    { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
     { name: 'Plan', href: '/dashboard/plan', icon: PlanIcon },
 ];
 

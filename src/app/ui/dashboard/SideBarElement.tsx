@@ -1,5 +1,6 @@
 
 import NavLinksElement from "@/app/ui/dashboard/NavLinksElement";
+import EspLinksElement from "@/app/ui/dashboard/EspLinksElement";
 
 export default function SideBarElement() {
     return (
@@ -7,7 +8,12 @@ export default function SideBarElement() {
             <p className="ml-2 mb-6">
                 Climat Guardian
             </p>
-            <NavLinksElement/>
+            <div className="border-b">
+                <NavLinksElement/>
+            </div>
+            <div>
+                <EspLinksElement/>
+            </div>
         </div>
     );
 }
