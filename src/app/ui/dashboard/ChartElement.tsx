@@ -47,7 +47,7 @@ export function ChartElement() {
             humidity: 38,
         }
     ];
-    return (<LineChart className="border-gray-300 border-2 rounded-2xl " width={800} height={500} data={data}>
+    return (<LineChart className="border-gray-300 border-2 rounded-2xl" width={800} height={500} data={data}>
         <XAxis fontSize={16} tickLine={false} axisLine={false} dataKey="name" padding={{left: 20, right: 50}}/>
         <YAxis fontSize={16} tickLine={false} axisLine={false} padding={{top: 50, bottom: 10}}/>
         <ReferenceLine y={50} label="Max humidity" stroke="red"/>
