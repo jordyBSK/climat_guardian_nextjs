@@ -3,8 +3,8 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "Login page",
-  description: "connect to our site",
+  title: "Climat guardian",
+  description: "",
 };
 
 export default function RootLayout({
