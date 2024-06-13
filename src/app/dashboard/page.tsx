@@ -1,3 +1,11 @@
+import {DateRangeElement} from "@/app/ui/dashboard/CalendarElement";
+
 export default function Page() {
-    return <p>Dashboard Page</p>;
+    return (
+        <div>
+            <p>Dashboard Page</p>
+            <DateRangeElement/>
+        </div>
+
+    );
 }

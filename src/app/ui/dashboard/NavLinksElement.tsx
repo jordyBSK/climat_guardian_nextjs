@@ -25,11 +25,11 @@ export default function NavLinksElement() {
                         className={clsx(
                             'flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary',
                             {
-                                'bg-sky-100 text-blue-600': pathname === link.href,
+                                'bg-gray-100 text-black': pathname === link.href,
                             }
                         )}
                     >
-                        {LinkIcon && <LinkIcon />}
+                        <LinkIcon />
                         <p className="hidden md:block">{link.name}</p>
                     </Link>
                 );
