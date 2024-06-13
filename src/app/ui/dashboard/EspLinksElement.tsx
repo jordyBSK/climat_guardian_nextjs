@@ -1,12 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import {usePathname} from 'next/navigation';
 import clsx from 'clsx';
 
 const links = [
-    { name: 'esp1', href: '/dashboard' },
-    { name: 'esp2', href: '/dashboard'},
+    {name: 'esp1', href: '/dashboard'},
+    {name: 'esp2', href: '/dashboard'},
 ];
 
 export default function EspLinksElement() {
@@ -30,7 +30,8 @@ export default function EspLinksElement() {
                     </Link>
                 );
             })}
-            <p className="gap-3 text-sm rounded-lg px-3 py-2 text-gray-500  transition-all hover:text-primary">+ ajouter un esp</p>
+            <p className="gap-3 text-sm rounded-lg px-3 py-2 text-gray-500  transition-all hover:text-primary">+ ajouter
+                un esp</p>
         </>
     );
 }

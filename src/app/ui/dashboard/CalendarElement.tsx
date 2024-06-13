@@ -1,13 +1,13 @@
 "use client"
 
 import * as React from "react"
-import { addDays, format } from "date-fns"
-import { Calendar as CalendarIcon } from "lucide-react"
-import { DateRange } from "react-day-picker"
+import {addDays, format} from "date-fns"
+import {Calendar as CalendarIcon} from "lucide-react"
+import {DateRange} from "react-day-picker"
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
+import {cn} from "@/lib/utils"
+import {Button} from "@/components/ui/button"
+import {Calendar} from "@/components/ui/calendar"
 import {
     Popover,
     PopoverContent,
@@ -15,8 +15,8 @@ import {
 } from "@/components/ui/popover"
 
 export function DateRangeElement({
-                                        className,
-                                    }: React.HTMLAttributes<HTMLDivElement>) {
+                                     className,
+                                 }: React.HTMLAttributes<HTMLDivElement>) {
     const [date, setDate] = React.useState<DateRange | undefined>({
         from: new Date(2024, 5, 1),
         to: addDays(new Date(2024, 5, 23), 20),
@@ -34,7 +34,7 @@ export function DateRangeElement({
                             !date && "text-muted-foreground"
                         )}
                     >
-                        <CalendarIcon className="mr-2 h-4 w-4" />
+                        <CalendarIcon className="mr-2 h-4 w-4"/>
                         {date?.from ? (
                             date.to ? (
                                 <>

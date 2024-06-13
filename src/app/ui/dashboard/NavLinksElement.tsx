@@ -1,14 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import {usePathname} from 'next/navigation';
 import clsx from 'clsx';
-import { HomeIcon } from './homeIcon';
+import {HomeIcon} from './homeIcon';
 import {PlanIcon} from "@/app/ui/dashboard/planIcon";
 
 const links = [
-    { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
-    { name: 'Plan', href: '/dashboard/plan', icon: PlanIcon },
+    {name: 'Dashboard', href: '/dashboard', icon: HomeIcon},
+    {name: 'Plan', href: '/dashboard/plan', icon: PlanIcon},
 ];
 
 export default function NavLinksElement() {
@@ -29,7 +29,7 @@ export default function NavLinksElement() {
                             }
                         )}
                     >
-                        <LinkIcon />
+                        <LinkIcon/>
                         <p className="hidden md:block">{link.name}</p>
                     </Link>
                 );
