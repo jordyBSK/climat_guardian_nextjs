@@ -13,7 +13,7 @@ export function HeaderElement() {
                         <PopoverTrigger asChild>
                             <Avatar className="ml-auto">
                                 <AvatarImage src="https://avatars.githubusercontent.com/u/125542402?v=4"/>
-                                <AvatarFallback>CN</AvatarFallback>
+                                <AvatarFallback>USER</AvatarFallback>
                             </Avatar>
                         </PopoverTrigger>
                         <PopoverContent className="w-32">
