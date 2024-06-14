@@ -1,4 +1,23 @@
+"use client";
+
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+
 export default function Plan() {
+  const [open, setOpen] = useState(false);
+
+  const handleMouseEnter = () => {
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setOpen(false);
+  };
   return (
     <div>
       <style>
@@ -92,6 +111,18 @@ svg{transition: all .5s ease}
           </text>
         </g>
       </svg>
+      <Popover open={open} onOpenChange={setOpen}>
+        <PopoverTrigger
+          asChild
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <Button variant="outline">Open popover</Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-80">
+          <div className="grid gap-4"></div>
+        </PopoverContent>
+      </Popover>
     </div>
   );
 }
