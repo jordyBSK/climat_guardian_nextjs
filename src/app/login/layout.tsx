@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Climat guardian",
-  description: "connect to our site",
-
+  title: "Login page",
+  description: "Login to your climat-guardian account",
 };
 
 export default function RootLayout({
