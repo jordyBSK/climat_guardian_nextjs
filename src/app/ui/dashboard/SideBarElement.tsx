@@ -8,7 +8,7 @@ export default function SideBarElement() {
       <div className="border-b">
         <NavLinksElement />
       </div>
-      <div>
+      <div className="mt-4">
         <EspLinksElement />
       </div>
     </div>
