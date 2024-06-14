@@ -13,11 +13,9 @@ export function HeaderElement() {
       <header className="flex justify-between items-center gap-4 border-b px-4 lg:h-[60px] lg:px-6">
         <div className="flex items-center flex-grow">
           <span className="flex-grow"></span>
-
           <Popover>
             <PopoverTrigger asChild>
               <Avatar className="ml-auto">
-                <AvatarImage src="https://avatars.githubusercontent.com/u/125542402?v=4" />
                 <AvatarFallback>USER</AvatarFallback>
               </Avatar>
             </PopoverTrigger>
