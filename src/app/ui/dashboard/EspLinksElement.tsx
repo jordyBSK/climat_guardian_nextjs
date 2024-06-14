@@ -3,10 +3,18 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "recharts";
 
 const links = [
-  { name: "esp1", href: "/dashboard" },
-  { name: "esp2", href: "/dashboard" },
+  { name: "chasseron", ip: "192.168.123.132" },
+  { name: "pleiades", ip: "192.168.123.132" },
 ];
 
 export default function EspLinksElement() {
@@ -15,14 +23,15 @@ export default function EspLinksElement() {
   return (
     <>
       {links.map((link) => {
+        const href = `/dashboard/esp/${link.name}`;
         return (
           <Link
             key={link.name}
-            href={link.href}
+            href={href}
             className={clsx(
               "flex items-center gap-3 text-sm rounded-lg py-2 text-gray-500  transition-all hover:text-primary",
               {
-                "": pathname === link.href,
+                "": pathname === href,
               },
             )}
           >
@@ -30,9 +39,29 @@ export default function EspLinksElement() {
           </Link>
         );
       })}
-      <p className="gap-3 text-sm rounded-lg py-2 text-gray-500  transition-all hover:text-primary">
-        + ajouter un esp
-      </p>
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button variant="outline">ajouter un esp</Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-80">
+          <form>
+            <div className="flex gap-2">
+              <Label>name</Label>
+              <Input type="text" id="espName" placeholder="name" />
+
+              <Label>ip adress</Label>
+              <Input type="text" id="espName" placeholder="ip adresse" />
+            </div>
+            <Button
+              className="w-full bg-black text-white mt-2"
+              type="submit"
+              variant="outline"
+            >
+              ajouter un esp
+            </Button>
+          </form>
+        </PopoverContent>
+      </Popover>
     </>
   );
 }
