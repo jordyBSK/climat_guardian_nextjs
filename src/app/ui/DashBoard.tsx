@@ -35,8 +35,6 @@ import {
   Turtle,
 } from "lucide-react";
 
-
-
 export function Dashboard() {
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
@@ -193,8 +191,8 @@ export function Dashboard() {
                             <p>
                               Neural{" "}
                               <span className="font-medium text-foreground">
-                              Genesis
-                            </span>
+                                Genesis
+                              </span>
                             </p>
                             <p className="text-xs" data-description="">
                               Our fastest model for general use cases.
@@ -209,8 +207,8 @@ export function Dashboard() {
                             <p>
                               Neural{" "}
                               <span className="font-medium text-foreground">
-                              Explorer
-                            </span>
+                                Explorer
+                              </span>
                             </p>
                             <p className="text-xs" data-description="">
                               Performance and speed for efficiency.
@@ -225,8 +223,8 @@ export function Dashboard() {
                             <p>
                               Neural{" "}
                               <span className="font-medium text-foreground">
-                              Quantum
-                            </span>
+                                Quantum
+                              </span>
                             </p>
                             <p className="text-xs" data-description="">
                               The most powerful model for complex computations.
@@ -251,5 +249,5 @@ export function Dashboard() {
         </main>
       </div>
     </div>
-);
+  );
 }
