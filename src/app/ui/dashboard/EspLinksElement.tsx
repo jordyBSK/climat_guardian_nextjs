@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
@@ -18,6 +19,7 @@ const links = [
 
 export default function EspLinksElement() {
   const pathname = usePathname();
+
   return (
     <>
       {links.map((link) => {
@@ -27,7 +29,7 @@ export default function EspLinksElement() {
             key={link.name}
             href={href}
             className={clsx(
-              "flex items-center gap-3 text-sm rounded-lg px-3 py-3 text-gray-500 transition-all hover:text-primary",
+              "flex items-center gap-3 text-sm rounded-lg py-2 text-gray-500  transition-all hover:text-primary",
               {
                 "": pathname === href,
               },

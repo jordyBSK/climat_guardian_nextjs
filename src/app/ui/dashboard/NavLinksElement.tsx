@@ -23,7 +23,7 @@ export default function NavLinksElement() {
             key={link.name}
             href={link.href}
             className={clsx(
-              "flex items-center gap-3 text-sm rounded-lg px-3 py-2 text-gray-500  transition-all hover:text-primary",
+              "flex items-center gap-3 text-sm rounded-lg py-2 text-gray-500  transition-all hover:text-primary",
               {
                 "text-gray-900": pathname === link.href,
               },
@@ -34,6 +34,7 @@ export default function NavLinksElement() {
           </Link>
         );
       })}
+      <div className="border-b-2"></div>
     </>
   );
 }
