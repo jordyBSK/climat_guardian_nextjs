@@ -5,8 +5,8 @@ import {usePathname} from 'next/navigation';
 import clsx from 'clsx';
 
 const links = [
-    {name: 'esp1', href: '/dashboard'},
-    {name: 'esp2', href: '/dashboard'},
+    {name: 'esp1', href: '/dashboard/esp'},
+    {name: 'esp2', href: '/dashboard/esp'},
 ];
 
 export default function EspLinksElement() {
