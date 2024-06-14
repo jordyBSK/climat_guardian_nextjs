@@ -1,15 +1,6 @@
-import Link from "next/link";
-
 // import ui components
 import NavLinksElement from "@/app/ui/dashboard/NavLinksElement";
 import EspLinksElement from "@/app/ui/dashboard/EspLinksElement";
-
-// import icons etc..
-import {
-  CircleUser,
-  Menu,
-  Landmark,
-} from "lucide-react";
 
 export default function SideBarElement() {
 
