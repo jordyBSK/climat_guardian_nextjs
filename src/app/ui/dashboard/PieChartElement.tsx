@@ -11,23 +11,25 @@ export function PieChartElement({
   const data = [{ name: "temperature", value: 25 }];
 
   return (
-    <PieChart
-      className="border-gray-300 border-2 rounded-2xl"
-      width={200}
-      height={200}
-    >
-      <Pie
-        innerRadius={40}
-        dataKey="value"
-        startAngle={180}
-        endAngle={0}
-        data={data}
-        cx={100}
-        cy={150}
-        outerRadius={80}
-        fill={color}
-        label
-      />
-    </PieChart>
+    <div className="flex justify-center">
+      <PieChart
+        className="border-gray-300 border-2 rounded-2xl"
+        width={200}
+        height={200}
+      >
+        <Pie
+          innerRadius={40}
+          dataKey="value"
+          startAngle={180}
+          endAngle={0}
+          data={data}
+          cx={100}
+          cy={150}
+          outerRadius={80}
+          fill={color}
+          label
+        />
+      </PieChart>
+    </div>
   );
 }
