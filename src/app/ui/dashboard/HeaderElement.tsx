@@ -1,10 +1,19 @@
 import React from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
+import Link from "next/link";
+import { CircleUser, Home, Landmark, LineChart, Menu, Package, Package2, ShoppingCart, Users } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu";
+import NavLinksElement from "@/app/ui/dashboard/NavLinksElement";
+import EspLinksElement from "@/app/ui/dashboard/EspLinksElement";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export function HeaderElement() {
   return (
@@ -23,7 +32,8 @@ export function HeaderElement() {
             <PopoverContent className="w-32">
               <div className="">
                 <form>
-                  <button className="flex h-2 w-full grow items-center justify-center rounded-md p-4 text-sm font-medium hover:bg-gray-100 hover:text-primary">
+                  <button
+                    className="flex h-2 w-full grow items-center justify-center rounded-md p-4 text-sm font-medium hover:bg-gray-100 hover:text-primary">
                     <div className="hidden md:block">Sign Out</div>
                   </button>
                 </form>

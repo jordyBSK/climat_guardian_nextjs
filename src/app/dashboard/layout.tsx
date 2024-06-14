@@ -10,7 +10,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="w-full flex-none md:w-64">
             <SideBarElement />
           </div>
-          <div className="flex-grow py-16 px-6">{children}</div>
+          <div className="flex-grow py-16 px-6">
+            {children}¨</div>
         </div>
       </div>
     </div>
