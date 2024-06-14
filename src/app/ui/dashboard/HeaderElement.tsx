@@ -1,17 +1,5 @@
 import React from "react";
 
-import Link from "next/link";
-import { CircleUser, Home, Landmark, LineChart, Menu, Package, Package2, ShoppingCart, Users } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu";
-import NavLinksElement from "@/app/ui/dashboard/NavLinksElement";
-import EspLinksElement from "@/app/ui/dashboard/EspLinksElement";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
