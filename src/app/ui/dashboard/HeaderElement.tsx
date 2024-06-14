@@ -1,35 +1,62 @@
 import React from "react";
+import Link from "next/link";
 
+// import shadcn ui components
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import NavLinksElement from "@/app/ui/dashboard/NavLinksElement";
+import EspLinksElement from "@/app/ui/dashboard/EspLinksElement";
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu";
+
+// import icons etc..
+import { CircleUser, Landmark, Menu } from "lucide-react";
 
 export function HeaderElement() {
   return (
-    <div className="flex flex-col h-[100px]">
-      <header className="flex justify-between items-center gap-4 border-b px-4 lg:h-[60px] lg:px-6">
-        <div className="flex items-center flex-grow">
-          <span className="flex-grow"></span>
-          <Popover>
-            <PopoverTrigger asChild>
-              <Avatar className="ml-auto">
-                <AvatarFallback>USER</AvatarFallback>
-              </Avatar>
-            </PopoverTrigger>
-            <PopoverContent className="w-32">
-              <div className="">
-                <form>
-                  <button className="flex h-2 w-full grow items-center justify-center rounded-md p-4 text-sm font-medium hover:bg-gray-100 hover:text-primary">
-                    <div className="hidden md:block">Sign Out</div>
-                  </button>
-                </form>
-              </div>
-            </PopoverContent>
-          </Popover>
+    <div className="flex flex-col">
+      <header className="flex justify-between h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button
+              variant="outline"
+              size="icon"
+              className="shrink-0 md:hidden"
+            >
+              <Menu className="h-5 w-5" />
+              <span className="sr-only">Toggle navigation menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="flex flex-col">
+            <NavLinksElement />
+            <EspLinksElement />
+          </SheetContent>
+        </Sheet>
+        <div className="flex h-14 items-center border-b lg:h-[60px]">
+          <Link href="/" className="flex items-center gap-2 font-semibold">
+            <Landmark className="h-6 w-6" />
+            <span className="">Musée Bolo</span>
+          </Link>
         </div>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant="secondary"
+              size="icon"
+              className="rounded-full md:absolute md:right-3"
+            >
+              <CircleUser className="h-5 w-5" />
+              <span className="sr-only">Toggle user menu</span>
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem>Logout</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </header>
     </div>
   );

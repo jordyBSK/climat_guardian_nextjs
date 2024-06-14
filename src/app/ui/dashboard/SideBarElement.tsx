@@ -1,21 +1,29 @@
-import NavLinksElement from "@/app/ui/dashboard/NavLinksElement";
-import EspLinksElement from "@/app/ui/dashboard/EspLinksElement";
-import { Landmark } from "lucide-react";
 import Link from "next/link";
 
+// import ui components
+import NavLinksElement from "@/app/ui/dashboard/NavLinksElement";
+import EspLinksElement from "@/app/ui/dashboard/EspLinksElement";
+
+// import icons etc..
+import {
+  CircleUser,
+  Menu,
+  Landmark,
+} from "lucide-react";
+
 export default function SideBarElement() {
+
   return (
-    <div className="flex h-full flex-col px-3 py-4 md:px-2 border-r gap-y-2">
-      <Link href="/" className="flex items-center gap-2 font-semibold">
-        <Landmark className="h-6 w-6" />
-        <span className="">Musée Bolo</span>
-      </Link>
-      <div className="border-b pt-5">
-        <NavLinksElement />
-      </div>
-      <div>
-        <EspLinksElement />
+    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+      <div className="hidden border-r bg-muted/40 md:block">
+        <div className="flex h-full max-h-screen flex-col gap-2">
+          <div className="">
+            <NavLinksElement />
+            <EspLinksElement />
+          </div>
+        </div>
       </div>
     </div>
   );
 }
+ 
