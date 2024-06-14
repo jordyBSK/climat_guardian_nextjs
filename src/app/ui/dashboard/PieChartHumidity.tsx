@@ -17,11 +17,7 @@ export function PieChartHumidity({ fade }: { fade: string }) {
   const data = [{ name: "temperature", value: 25 }];
 
   // Fonction pour rendre le libellé au centre du cercle
-  const renderCustomizedLabel = ({
-                                   cx,
-                                   cy,
-                                   index
-                                 }: CustomizedLabelProps) => {
+  const renderCustomizedLabel = ({ cx, cy, index }: CustomizedLabelProps) => {
     return (
       <text
         x={cx}
