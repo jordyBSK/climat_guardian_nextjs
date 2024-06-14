@@ -35,7 +35,7 @@ export default function EspLinksElement() {
               },
             )}
           >
-            <p className="hidden md:block">{link.name}</p>
+            <p className="hidden text-lg md:block">{link.name}</p>
           </Link>
         );
       })}
