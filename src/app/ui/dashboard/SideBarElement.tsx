@@ -10,7 +10,7 @@ export default function SideBarElement() {
         <Landmark className="h-6 w-6" />
         <span className="">Musée Bolo</span>
       </Link>
-      <div className="border-b pt-2">
+      <div className="border-b pt-5">
         <NavLinksElement />
       </div>
       <div>
