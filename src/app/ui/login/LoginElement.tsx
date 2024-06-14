@@ -12,33 +12,48 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 export function LoginElement() {
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <Card className="w-96">
-        <CardHeader>
-          <CardTitle>Login</CardTitle>
-          <CardDescription>Login to your account.</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-2">
-          <div className="space-y-1">
-            <Label htmlFor="username">Username</Label>
-            <Input id="username" placeholder="Username" />
-          </div>
-          <div className="space-y-1">
-            <Label htmlFor="password">Password</Label>
-            <Input type="password" id="password" placeholder="Password" />
-          </div>
-        </CardContent>
-        <CardFooter>
-          <Link href="/dashboard">
-            <Button>Save changes</Button>
-          </Link>
-        </CardFooter>
-      </Card>
-    </div>
+      <div className="flex justify-center mt-80">
+        <Card className="w-full max-w-lg">
+          <CardHeader>
+            <CardTitle className="text-2xl">Login</CardTitle>
+            <CardDescription>
+              Enter your email below to login to your account.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid gap-4">
+            <div className="grid gap-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                  id="email"
+                  type="email"
+                  placeholder="m@example.com"
+                  required
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="password">Password</Label>
+              <Input
+                  id="password"
+                  type="password"
+                  placeholder="*****************"
+                  required
+              />
+            </div>
+          </CardContent>
+          <CardFooter className="flex flex-col gap-5">
+            <Button className="w-full">Sign in</Button>
+            <a
+                href="/dashboard"
+                className="border-2 border-gray-800 rounded-[7px] w-full text-center p-2 hover:bg-gray-800 hover:text-white"
+            >
+              Go to dashboard
+            </a>
+          </CardFooter>
+        </Card>
+      </div>
   );
 }
 

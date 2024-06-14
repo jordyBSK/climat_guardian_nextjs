@@ -1,5 +1,5 @@
 "use client";
-import { PieChartElement } from "@/app/ui/dashboard/PieChartElement";
+import { PieChartHumidity } from "@/app/ui/dashboard/PieChartHumidity.tsx";
 import { ChartElement } from "@/app/ui/dashboard/ChartElement";
 import { DateRangeElement } from "@/app/ui/dashboard/CalendarElement";
 
@@ -9,8 +9,8 @@ export default function Page({ params }: { params: any }) {
       <p className="uppercase font-bold text-2xl">{params.esp}</p>
       <DateRangeElement />
       <div className="flex">
-        <PieChartElement color={"orange"} />
-        <PieChartElement color={"blue"} />
+        <PieChartHumidity color={"orange"} />
+        <PieChartHumidity color={"blue"} />
       </div>
       <div>
         <ChartElement />
