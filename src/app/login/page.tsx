@@ -1,5 +1,5 @@
-import { Login } from "@/app/ui/Login";
+import { LoginElement } from "@/app/ui/login/LoginElement";
 
 export default function Page() {
-  return <Login />;
+  return <LoginElement />;
 }
