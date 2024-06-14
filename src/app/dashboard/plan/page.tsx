@@ -1,3 +1,5 @@
+import Plan from "@/app/ui/plan/Plan";
+
 export default function Page() {
-  return <p>Plan Page</p>;
+  return <Plan />;
 }
