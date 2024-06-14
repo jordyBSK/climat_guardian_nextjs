@@ -34,6 +34,7 @@ export default function NavLinksElement() {
           </Link>
         );
       })}
+      <div className="border-b-2"></div>
     </>
   );
 }
