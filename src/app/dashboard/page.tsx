@@ -13,7 +13,6 @@ const ESPList = [
 const tempData = [{ name: "temperature", value: 28 }];
 const humiData = [{ name: "humidity", value: 35 }];
 
-
 export default function Page() {
   return (
     <>
@@ -30,7 +29,6 @@ export default function Page() {
               <div className="flex flex-row  w-full h-full py-14 sm:py-auto">
                 <PieChartTemperature data={tempData} />
                 <PieChartHumidity data={humiData} />
-
               </div>
             </div>
           );

@@ -35,7 +35,7 @@ export function PieChartHumidity({ data }: { data: any }) {
 
   // Fonction pour calculer l'angle de fin en fonction de l'humidité
   const calculateEndAngle = (humidity: number) => {
-    return 270 - (humidity * 3.6);
+    return 270 - humidity * 3.6;
   };
 
   return (

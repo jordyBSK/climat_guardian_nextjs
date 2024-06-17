@@ -64,7 +64,11 @@ export function ChartElement() {
         axisLine={false}
         padding={{ top: 50, bottom: 10 }}
       />
-      <ReferenceLine y={50} label={{ value: 'Max humidity', position: 'top' }} stroke="red" />
+      <ReferenceLine
+        y={50}
+        label={{ value: "Max humidity", position: "top" }}
+        stroke="red"
+      />
       <Tooltip />
       <Legend />
       <Line
