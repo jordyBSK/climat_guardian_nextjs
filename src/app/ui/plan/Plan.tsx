@@ -12,7 +12,9 @@ export default function Plan() {
   const handleMouseEnter = (circle: SetStateAction<number | null>) => {
     setHoveredCircle(circle);
   };
-  const [esp, setEsp] = useState<{ cx: number; cy: number; id: number; name:string }[]>([
+  const [esp, setEsp] = useState<
+    { cx: number; cy: number; id: number; name: string }[]
+  >([
     { cx: 78, cy: 80, id: 1, name: "Chasseron" },
     { cx: 16, cy: 59, id: 2, name: "Argentine" },
     { cx: 82, cy: 42, id: 3, name: "Jungfrau" },
@@ -23,6 +25,20 @@ export default function Plan() {
     setHoveredCircle(null);
   };
 
+  const handleSvgClick = (
+    event: React.MouseEvent<SVGSVGElement, MouseEvent>,
+  ) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const cx = ((event.clientX - rect.left) / rect.width) * 100;
+    const cy = ((event.clientY - rect.top) / rect.height) * 100;
+    const newCircle = {
+      cx,
+      cy,
+      id: esp.length + 1,
+      name: "esp",
+    };
+    setEsp([...esp, newCircle]);
+  };
 
   return (
     <div>
@@ -56,6 +72,7 @@ export default function Plan() {
         className="w-[1000px] h-[1000px]"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
+        onClick={handleSvgClick}
       >
         <g className="downstairs transition-all duration-500 ease-in-out">
           <path
