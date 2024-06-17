@@ -9,7 +9,6 @@ import {
   Legend,
   ReferenceLine,
 } from "recharts";
-import React, { PureComponent } from "react";
 
 export function ChartElement() {
   const data = [
