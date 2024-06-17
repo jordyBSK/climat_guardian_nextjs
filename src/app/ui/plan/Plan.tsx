@@ -1,43 +1,25 @@
 "use client";
 
+import React, { useState } from "react";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { SetStateAction, useState } from "react";
 
-export default function Plan() {
-  const [hoveredCircle, setHoveredCircle] = useState<number | null>(null);
-  const handleMouseEnter = (circle: SetStateAction<number | null>) => {
+export default function Plan({
+  espList,
+}: {
+  espList: { cx: number; cy: number; ip: string; name: string }[];
+}) {
+  const [hoveredCircle, setHoveredCircle] = useState("");
+
+  const handleMouseEnter = (circle: React.SetStateAction<string>) => {
     setHoveredCircle(circle);
   };
-  const [esp, setEsp] = useState<
-    { cx: number; cy: number; id: number; name: string }[]
-  >([
-    { cx: 78, cy: 80, id: 1, name: "Chasseron" },
-    { cx: 16, cy: 59, id: 2, name: "Argentine" },
-    { cx: 82, cy: 42, id: 3, name: "Jungfrau" },
-    { cx: 51, cy: 42, id: 4, name: "Pleiades" },
-  ]);
 
   const handleMouseLeave = () => {
-    setHoveredCircle(null);
-  };
-
-  const handleSvgClick = (
-    event: React.MouseEvent<SVGSVGElement, MouseEvent>,
-  ) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    const cx = ((event.clientX - rect.left) / rect.width) * 100;
-    const cy = ((event.clientY - rect.top) / rect.height) * 100;
-    const newCircle = {
-      cx,
-      cy,
-      id: esp.length + 1,
-      name: "esp",
-    };
-    setEsp([...esp, newCircle]);
+    setHoveredCircle("");
   };
 
   return (
@@ -54,12 +36,9 @@ export default function Plan() {
           .barrier {
             opacity: 0.3;
             stroke-width: 0.2px;
-            stroke-dasharray: 0 200 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
-              0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75
-              0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
-              0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75
-              0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
-              0.75 0.2 0.75 0.2 0.75 0.2;
+            stroke-dasharray: 0 200 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
+              0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
+              0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2;
             stroke-dashoffset: 200;
             transition: all .8s ease 0s;
           }
@@ -72,7 +51,6 @@ export default function Plan() {
         className="h-[1000px] w-[1000px]"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
-        onClick={handleSvgClick}
       >
         <g className="downstairs transition-all duration-500 ease-in-out">
           <path
@@ -86,15 +64,15 @@ export default function Plan() {
         </g>
 
         <g className="text-[3px] text-blue-300 transition-all duration-500 ease-in-out">
-          {esp.map(({ cx, cy, id, name }) => (
+          {espList.map(({ cx, cy, ip, name }) => (
             <Popover
-              key={id}
-              open={hoveredCircle === id}
-              onOpenChange={(open) => setHoveredCircle(open ? id : null)}
+              key={ip}
+              open={hoveredCircle === ip}
+              onOpenChange={(open) => setHoveredCircle(open ? ip : "")}
             >
               <PopoverTrigger
                 asChild
-                onMouseEnter={() => handleMouseEnter(id)}
+                onMouseEnter={() => handleMouseEnter(ip)}
                 onMouseLeave={handleMouseLeave}
               >
                 <g id="icon-light" fill="currentcolor">
