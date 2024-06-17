@@ -10,6 +10,7 @@ import {
   ReferenceLine,
 } from "recharts";
 import React, { PureComponent } from "react";
+import { Label } from "@/components/ui/label";
 
 export function ChartElement() {
   const data = [
@@ -64,7 +65,7 @@ export function ChartElement() {
         axisLine={false}
         padding={{ top: 50, bottom: 10 }}
       />
-      <ReferenceLine y={50} label="Max humidity" stroke="red" />
+      <ReferenceLine y={50} label={{ value: 'Max humidity', position: 'top' }} stroke="red" />
       <Tooltip />
       <Legend />
       <Line
