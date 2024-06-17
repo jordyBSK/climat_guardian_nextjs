@@ -29,7 +29,7 @@ export default function EspLinksElement() {
             key={link.name}
             href={href}
             className={clsx(
-              "flex items-center gap-3 text-sm rounded-lg py-2 text-gray-500  transition-all hover:text-primary",
+              "flex items-center gap-3 rounded-lg py-2 text-sm text-gray-500 transition-all hover:text-primary",
               {
                 "": pathname === href,
               },
@@ -53,7 +53,7 @@ export default function EspLinksElement() {
               <Input type="text" id="espName" placeholder="ip adresse" />
             </div>
             <Button
-              className="w-full bg-black text-white mt-2"
+              className="mt-2 w-full bg-black text-white"
               type="submit"
               variant="outline"
             >

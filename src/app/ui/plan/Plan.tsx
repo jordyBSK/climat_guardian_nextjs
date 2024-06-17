@@ -69,7 +69,7 @@ export default function Plan() {
       </style>
 
       <svg
-        className="w-[1000px] h-[1000px]"
+        className="h-[1000px] w-[1000px]"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
         onClick={handleSvgClick}
@@ -85,7 +85,7 @@ export default function Plan() {
           />
         </g>
 
-        <g className="transition-all duration-500 ease-in-out text-blue-300 text-[3px]">
+        <g className="text-[3px] text-blue-300 transition-all duration-500 ease-in-out">
           {esp.map(({ cx, cy, id, name }) => (
             <Popover
               key={id}
@@ -103,7 +103,7 @@ export default function Plan() {
                   <circle cx={cx} cy={cy} r="6" opacity=".1" />
                 </g>
               </PopoverTrigger>
-              <PopoverContent className="w-44 font-bold gap-2">
+              <PopoverContent className="w-44 gap-2 font-bold">
                 {name}
                 <div className="flex flex-col gap-1">
                   <p>Temperature: 24&#8451;</p>

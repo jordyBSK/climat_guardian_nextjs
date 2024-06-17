@@ -46,7 +46,7 @@ export function ChartElement() {
   ];
   return (
     <LineChart
-      className="border-gray-300 border-2 rounded-2xl"
+      className="rounded-2xl border-2 border-gray-300"
       width={800}
       height={500}
       data={data}

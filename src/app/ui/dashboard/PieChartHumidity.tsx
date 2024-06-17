@@ -33,7 +33,7 @@ export function PieChartHumidity({ fade }: { fade: string }) {
   };
 
   return (
-    <div className="flex justify-center w-full h-full">
+    <div className="flex h-full w-full justify-center">
       <PieChart width={200} height={200}>
         <Pie
           innerRadius={60}

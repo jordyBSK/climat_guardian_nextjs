@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 
 export function LoginElement() {
   return (
-    <div className="flex justify-center mt-80">
+    <div className="mt-80 flex justify-center">
       <Card className="w-full max-w-lg">
         <CardHeader>
           <CardTitle className="text-2xl">Login</CardTitle>
@@ -47,7 +47,7 @@ export function LoginElement() {
           <Button className="w-full">Sign in</Button>
           <a
             href="/dashboard"
-            className="border-2 border-gray-800 rounded-[7px] w-full text-center p-2 hover:bg-gray-800 hover:text-white"
+            className="w-full rounded-[7px] border-2 border-gray-800 p-2 text-center hover:bg-gray-800 hover:text-white"
           >
             Go to dashboard
           </a>

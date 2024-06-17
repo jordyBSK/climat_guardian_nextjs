@@ -22,17 +22,17 @@ const humidity = [
 export default function Page() {
   return (
     <>
-      <div className="grid px-auto grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-10 h-fit min-w-[500px] w-full">
+      <div className="px-auto grid h-fit w-full min-w-[500px] grid-cols-1 gap-10 xl:grid-cols-2 2xl:grid-cols-3">
         {temperature.map((temp, index) => {
           return (
             <div
-              className="flex flex-col h-full items-center text-center border-2 rounded-2xl"
+              className="flex h-full flex-col items-center rounded-2xl border-2 text-center"
               key={index}
             >
-              <h2 className="pt-5 w-full text-center text-gray-800 border-b-2 pb-5">
+              <h2 className="w-full border-b-2 pb-5 pt-5 text-center text-gray-800">
                 {temp.name}
               </h2>
-              <div className="flex flex-row  w-full h-full py-14 sm:py-auto">
+              <div className="sm:py-auto flex h-full w-full flex-row py-14">
                 <PieChartTemperature color={temp.color} />
                 {humidity[index] && (
                   <PieChartHumidity fade={humidity[index].color} />
