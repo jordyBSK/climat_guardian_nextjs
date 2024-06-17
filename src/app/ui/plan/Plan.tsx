@@ -1,25 +1,56 @@
 "use client";
 
-import React, { useState } from "react";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import React, { useState } from "react";
+import { Input } from "@/components/ui/input";
 
-export default function Plan({
-  espList,
-}: {
-  espList: { cx: number; cy: number; ip: string; name: string }[];
-}) {
-  const [hoveredCircle, setHoveredCircle] = useState("");
+export default function Plan() {
+  const [hoveredCircle, setHoveredCircle] = useState<number | string>("");
+  const [newName, setNewName] = useState<string>("");
+  const [newIp, setNewIp] = useState<string>("");
+  const [openPopOver, setOpenPopOver] = useState(false);
 
-  const handleMouseEnter = (circle: React.SetStateAction<string>) => {
+  const handleMouseEnter = (circle: string) => {
     setHoveredCircle(circle);
   };
+  const [esp, setEsp] = useState<
+    { cx: number; cy: number; ip: string; name: string }[]
+  >([
+    { cx: 78, cy: 80, ip: "182.250.231.111", name: "Chasseron" },
+    { cx: 16, cy: 59, ip: "182.250.231.112", name: "Argentine" },
+    { cx: 82, cy: 42, ip: "182.250.231.113", name: "Jungfrau" },
+    { cx: 51, cy: 42, ip: "182.250.231.114", name: "Pleiades" },
+  ]);
 
   const handleMouseLeave = () => {
     setHoveredCircle("");
+  };
+
+  const handleSvgClick = (
+    event: React.MouseEvent<SVGSVGElement, MouseEvent>,
+  ) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const cx = ((event.clientX - rect.left) / rect.width) * 100;
+    const cy = ((event.clientY - rect.top) / rect.height) * 100;
+
+    setOpenPopOver(true);
+
+    if (newName !== null && newName !== "" && newIp !== null) {
+      const newCircle = {
+        cx,
+        cy,
+        ip: newIp,
+        name: newName,
+      };
+      setEsp([...esp, newCircle]);
+      setNewName("");
+      setNewIp("");
+      setOpenPopOver(false);
+    }
   };
 
   return (
@@ -36,9 +67,10 @@ export default function Plan({
           .barrier {
             opacity: 0.3;
             stroke-width: 0.2px;
-            stroke-dasharray: 0 200 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
-              0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
-              0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2;
+            stroke-dasharray: 0 200 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
+              0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75
+              0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2 0.75 0.2
+              0.75 0.2 0.75 0.2 0.75 0.2;
             stroke-dashoffset: 200;
             transition: all .8s ease 0s;
           }
@@ -46,11 +78,29 @@ export default function Plan({
           svg { transition: all .5s ease; }
         `}
       </style>
+      <Popover open={openPopOver}>
+        <PopoverTrigger></PopoverTrigger>
+        <PopoverContent className="w-44 gap-2 font-bold">
+          <Input
+            type="text"
+            placeholder="name"
+            value={newName}
+            onChange={(e) => setNewName(e.target.value)}
+          />{" "}
+          <Input
+            type="text"
+            placeholder="ip address"
+            value={newIp}
+            onChange={(e) => setNewIp(e.target.value)}
+          />
+        </PopoverContent>
+      </Popover>
 
       <svg
         className="h-[1000px] w-[1000px]"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
+        onClick={handleSvgClick}
       >
         <g className="downstairs transition-all duration-500 ease-in-out">
           <path
@@ -64,7 +114,7 @@ export default function Plan({
         </g>
 
         <g className="text-[3px] text-blue-300 transition-all duration-500 ease-in-out">
-          {espList.map(({ cx, cy, ip, name }) => (
+          {esp.map(({ cx, cy, ip, name }) => (
             <Popover
               key={ip}
               open={hoveredCircle === ip}
