@@ -10,15 +10,6 @@ const ESPList = [
   { name: "ESP N°6" },
 ];
 
-const humidity = [
-  { color: "#57C9F0", name: "ESP N°1" },
-  { color: "#0E60E2", name: "ESP N°2" },
-  { color: "#4A7DCD", name: "ESP N°3" },
-  { color: "#0E60E2", name: "ESP N°4" },
-  { color: "#57C9F0", name: "ESP N°1" },
-  { color: "#0E60E2", name: "ESP N°2" },
-];
-
 const tempData = [{ name: "temperature", value: 28 }];
 const humiData = [{ name: "humidity", value: 35 }];
 
