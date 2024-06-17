@@ -9,8 +9,7 @@ import {
   Legend,
   ReferenceLine,
 } from "recharts";
-import React, { PureComponent } from "react";
-import { Label } from "@/components/ui/label";
+import React from "react";
 
 export function ChartElement() {
   const data = [
