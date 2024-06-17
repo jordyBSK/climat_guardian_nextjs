@@ -12,17 +12,17 @@ export default function Plan() {
   const handleMouseEnter = (circle: SetStateAction<number | null>) => {
     setHoveredCircle(circle);
   };
+  const [esp, setEsp] = useState<{ cx: number; cy: number; id: number; name:string }[]>([
+    { cx: 78, cy: 80, id: 1, name: "Chasseron" },
+    { cx: 16, cy: 59, id: 2, name: "Argentine" },
+    { cx: 82, cy: 42, id: 3, name: "Jungfrau" },
+    { cx: 51, cy: 42, id: 4, name: "Pleiades" },
+  ]);
 
   const handleMouseLeave = () => {
     setHoveredCircle(null);
   };
 
-  const esp = [
-    { cx: 78, cy: 80, id: 1, name: "Chasseron" },
-    { cx: 16, cy: 59, id: 2, name: "Argentine" },
-    { cx: 82, cy: 42, id: 3, name: "Jungfrau" },
-    { cx: 51, cy: 42, id: 4, name: "Pleiades" },
-  ];
 
   return (
     <div>
