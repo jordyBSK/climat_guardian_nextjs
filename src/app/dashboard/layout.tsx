@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="hidden md:block w-full flex-none md:w-64">
           <SideBarElement />
         </div>
-        <div className="flex justify-center w-full py-5 pl-10 pr-4 lg:pr-6">
+        <div className="flex w-full mx-4 md:-mx-5 md:mt-2 lg:mx-10">
           {children}
         </div>
       </div>

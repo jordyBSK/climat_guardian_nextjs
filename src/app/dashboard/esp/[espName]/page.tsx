@@ -14,11 +14,10 @@ const humiData = [{ name: "humidity", value: 38 }];
 export default function Page({ params }: { params: any }) {
 
   return (
-    <div className="flex h-full min-h-[50vh] gap-y-5 flex-col rounded-xl p-4 lg:col-span-2">
-
+    <div className="flex flex-col min-w-[500px] gap-y-5 pt-2">
       <p className="uppercase font-bold text-2xl text-black">{params.espName}</p>
       <DateRangeElement />
-      <div className="flex">
+      <div className="flex flex-col sm:flex-row">
         <PieChartTemperature data={tempData} />
         <PieChartHumidity data={humiData} />
       </div>
