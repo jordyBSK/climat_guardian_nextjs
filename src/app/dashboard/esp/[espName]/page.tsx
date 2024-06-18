@@ -13,8 +13,8 @@ const humiData = [{ name: "humidity", value: 38 }];
 
 export default function Page({ params }: { params: any }) {
   return (
-    <div className="flex flex-col w-full min-w-[500px] gap-y-5 pt-2">
-      <p className="uppercase font-bold text-2xl text-black">
+    <div className="flex w-full min-w-[500px] flex-col gap-y-5 pt-2">
+      <p className="text-2xl font-bold uppercase text-black">
         {params.espName}
       </p>
       <DateRangeElement />
