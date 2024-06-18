@@ -1,5 +1,4 @@
 "use client";
-
 import {
   Popover,
   PopoverContent,
@@ -7,12 +6,16 @@ import {
 } from "@/components/ui/popover";
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
+import clsx from "clsx";
+import { Button } from "@/components/ui/button";
 
 export default function Plan() {
   const [hoveredCircle, setHoveredCircle] = useState<number | string>("");
   const [newName, setNewName] = useState<string>("");
   const [newIp, setNewIp] = useState<string>("");
   const [openPopOver, setOpenPopOver] = useState(false);
+  const [cx, setCx] = useState(0);
+  const [cy, setCy] = useState(0);
 
   const handleMouseEnter = (circle: string) => {
     setHoveredCircle(circle);
@@ -30,16 +33,15 @@ export default function Plan() {
     setHoveredCircle("");
   };
 
-  const handleSvgClick = (
-    event: React.MouseEvent<SVGSVGElement, MouseEvent>,
-  ) => {
+  const getPosition = (event: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
     const rect = event.currentTarget.getBoundingClientRect();
-    const cx = ((event.clientX - rect.left) / rect.width) * 100;
-    const cy = ((event.clientY - rect.top) / rect.height) * 100;
-
+    setCx(((event.clientX - rect.left) / rect.width) * 100);
+    setCy(((event.clientY - rect.top) / rect.height) * 100);
     setOpenPopOver(true);
+  };
 
-    if (newName !== null && newName !== "" && newIp !== null) {
+  const addEsp = () => {
+    if (newName.trim() !== "" && newIp.trim() !== "") {
       const newCircle = {
         cx,
         cy,
@@ -81,18 +83,30 @@ export default function Plan() {
       <Popover open={openPopOver}>
         <PopoverTrigger></PopoverTrigger>
         <PopoverContent className="w-44 gap-2 font-bold">
-          <Input
-            type="text"
-            placeholder="name"
-            value={newName}
-            onChange={(e) => setNewName(e.target.value)}
-          />{" "}
-          <Input
-            type="text"
-            placeholder="ip address"
-            value={newIp}
-            onChange={(e) => setNewIp(e.target.value)}
-          />
+          <div>
+            <div className="mb-2 text-center">
+              <p>X: {Number(cx.toFixed(2))}</p>
+              <p>Y: {Number(cy.toFixed(2))}</p>
+            </div>
+            <div className="mb-5">
+              <Input
+                className="mb-1"
+                type="text"
+                placeholder="name"
+                value={newName}
+                onChange={(e) => setNewName(e.target.value)}
+              />
+              <Input
+                type="text"
+                placeholder="ip address"
+                value={newIp}
+                onChange={(e) => setNewIp(e.target.value)}
+              />
+            </div>
+            <Button className="w-full" onClick={addEsp}>
+              Button
+            </Button>
+          </div>
         </PopoverContent>
       </Popover>
 
@@ -100,7 +114,7 @@ export default function Plan() {
         className="h-[1000px] w-[1000px]"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
-        onClick={handleSvgClick}
+        onClick={getPosition}
       >
         <g className="downstairs transition-all duration-500 ease-in-out">
           <path
