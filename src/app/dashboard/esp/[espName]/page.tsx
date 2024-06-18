@@ -7,8 +7,13 @@ import { DateRangeElement } from "@/app/ui/dashboard/CalendarElement";
 
 export default function Page({ params }: { params: any }) {
   return (
-      <div className="flex h-full min-h-[50vh] gap-y-5 flex-col rounded-xl p-4 lg:col-span-2">
-
+    <div className="flex h-full min-h-[50vh] flex-col gap-y-5 rounded-xl p-4 lg:col-span-2">
+      <p className="text-2xl font-bold uppercase text-black">
+        {params.espName}
+      </p>
+      <DateRangeElement />
+      <div className="flex">
+        <PieChartHumidity fade={"bleu"} />
           <p className="uppercase font-bold text-2xl text-black">{params.espName}</p>
           <DateRangeElement/>
           <div className="flex">
@@ -21,5 +26,6 @@ export default function Page({ params }: { params: any }) {
               <ChartElement/>
           </div>
       </div>
+    </div>
   );
 }

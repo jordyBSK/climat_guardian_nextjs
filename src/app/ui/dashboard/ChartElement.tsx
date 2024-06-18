@@ -9,7 +9,6 @@ import {
   Legend,
   ReferenceLine,
 } from "recharts";
-import React, { PureComponent } from "react";
 
 export function ChartElement() {
   const data = [
@@ -46,7 +45,7 @@ export function ChartElement() {
   ];
   return (
     <LineChart
-      className="border-gray-300 border-2 rounded-2xl"
+      className="rounded-2xl border-2 border-gray-300"
       width={800}
       height={500}
       data={data}
