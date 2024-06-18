@@ -7,7 +7,6 @@ import {
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Label } from "recharts";
 
 export default function Plan() {
   const [hoveredCircle, setHoveredCircle] = useState<number | string>("");
@@ -109,7 +108,13 @@ export default function Plan() {
               />
             </div>
             <Button className="w-full" onClick={addEsp}>
-              Button
+              ajouter
+            </Button>
+            <Button
+              className="mt-1 w-full border-2 bg-white text-black hover:text-white"
+              onClick={() => setOpen(false)}
+            >
+              fermer
             </Button>
           </div>
         </PopoverContent>
