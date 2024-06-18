@@ -1,3 +1,10 @@
+import Plan from "@/app/ui/plan/Plan";
+import React from "react";
+
 export default function Page() {
-  return <p>Plan Page</p>;
+  return (
+    <div>
+      <Plan />
+    </div>
+  );
 }

@@ -3,10 +3,10 @@ import { HeaderElement } from "@/app/ui/dashboard/HeaderElement";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className=" w-full">
+    <div className="w-full">
       <HeaderElement />
       <div className="flex h-screen flex-col md:flex-row">
-        <div className="hidden md:block w-full flex-none md:w-64">
+        <div className="hidden w-full flex-none md:block md:w-64">
           <SideBarElement />
         </div>
         <div className="flex justify-stretch w-full mx-4 md:mx-5 md:mt-2 lg:ml-14">

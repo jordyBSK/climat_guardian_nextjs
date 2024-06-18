@@ -20,7 +20,7 @@ export default function Page() {
         {ESPList.map((esp, index) => {
           return (
             <div
-              className="flex flex-col h-full items-center text-center border-2 rounded-2xl"
+              className="flex h-full flex-col items-center rounded-2xl border-2 text-center"
               key={index}
             >
               <h2 className="pt-5 w-full text-center text-gray-800 border-b-2 pb-5">

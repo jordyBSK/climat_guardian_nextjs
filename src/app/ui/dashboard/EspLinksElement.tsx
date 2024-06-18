@@ -91,7 +91,7 @@ export default function EspLinksElement() {
               />
             </div>
             <Button
-              className="w-full bg-black text-white mt-2"
+              className="mt-2 w-full bg-black text-white"
               type="submit"
               variant="outline"
             >

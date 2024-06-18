@@ -32,7 +32,6 @@ export function PieChartTemperature({ data }: { data: any }) {
       </text>
     );
   };
-
   const calculateEndAngle = (temperature: number) => {
     return 270 - temperature * 8;
   };
