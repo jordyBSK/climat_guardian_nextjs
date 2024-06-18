@@ -7,7 +7,7 @@ import {
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import {Label} from "recharts";
+import { Label } from "recharts";
 
 export default function Plan() {
   const [hoveredCircle, setHoveredCircle] = useState<number | string>("");
@@ -46,7 +46,7 @@ export default function Plan() {
       setEsp([...esp, newCircle]);
       setNewName("");
       setNewIp("");
-      setOpen(false)
+      setOpen(false);
     }
   };
 
@@ -94,18 +94,18 @@ export default function Plan() {
             </div>
             <div className="mb-5">
               <Input
-                  className="mb-1"
-                  id="newname"
-                  type="text"
-                  placeholder="name"
-                  value={newName}
-                  onChange={(e) => setNewName(e.target.value)}
+                className="mb-1"
+                id="newname"
+                type="text"
+                placeholder="name"
+                value={newName}
+                onChange={(e) => setNewName(e.target.value)}
               />
               <Input
-                  type="text"
-                  placeholder="ip address"
-                  value={newIp}
-                  onChange={(e) => setNewIp(e.target.value)}
+                type="text"
+                placeholder="ip address"
+                value={newIp}
+                onChange={(e) => setNewIp(e.target.value)}
               />
             </div>
             <Button className="w-full" onClick={addEsp}>

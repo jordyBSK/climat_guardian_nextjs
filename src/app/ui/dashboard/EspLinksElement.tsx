@@ -67,7 +67,9 @@ export default function EspLinksElement() {
       })}
       <Popover>
         <PopoverTrigger asChild>
-          <button className="hover:text-black text-zinc-500">+ ajouter un esp</button>
+          <button className="text-zinc-500 hover:text-black">
+            + ajouter un esp
+          </button>
         </PopoverTrigger>
         <PopoverContent className="w-80">
           <form onSubmit={handleSubmit}>
