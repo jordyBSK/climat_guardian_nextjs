@@ -7,19 +7,18 @@ import {
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import {Label} from "recharts";
 
 export default function Plan() {
   const [hoveredCircle, setHoveredCircle] = useState<number | string>("");
   const [newName, setNewName] = useState<string>("");
   const [newIp, setNewIp] = useState<string>("");
-  const [openPopOver, setOpenPopOver] = useState(false);
   const [cx, setCx] = useState(0);
   const [cy, setCy] = useState(0);
-  const [clickEsp, setClickEsp] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const mouseClick = (circle: string) => {
     setHoveredCircle(circle);
-    setOpenPopOver(false);
   };
   const [esp, setEsp] = useState<
     { cx: number; cy: number; ip: string; name: string }[]
@@ -31,13 +30,9 @@ export default function Plan() {
   ]);
 
   const getPosition = (event: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
-    if (!openPopOver) {
-      const rect = event.currentTarget.getBoundingClientRect();
-      setCx(((event.clientX - rect.left) / rect.width) * 100);
-      setCy(((event.clientY - rect.top) / rect.height) * 100);
-      setOpenPopOver(true);
-    }
-    setClickEsp(false);
+    const rect = event.currentTarget.getBoundingClientRect();
+    setCx(((event.clientX - rect.left) / rect.width) * 100);
+    setCy(((event.clientY - rect.top) / rect.height) * 100);
   };
 
   const addEsp = () => {
@@ -51,7 +46,7 @@ export default function Plan() {
       setEsp([...esp, newCircle]);
       setNewName("");
       setNewIp("");
-      setOpenPopOver(false);
+      setOpen(false)
     }
   };
 
@@ -85,8 +80,12 @@ export default function Plan() {
           svg { transition: all .5s ease; }
         `}
       </style>
-      <Popover open={openPopOver}>
-        <PopoverTrigger></PopoverTrigger>
+      <Popover open={open}>
+        <PopoverTrigger>
+          <Button variant="outline" onClick={() => setOpen(true)}>
+            Ajouter un esp
+          </Button>
+        </PopoverTrigger>
         <PopoverContent className="w-44 gap-2 font-bold">
           <div>
             <div className="mb-2 text-center">
@@ -95,17 +94,18 @@ export default function Plan() {
             </div>
             <div className="mb-5">
               <Input
-                className="mb-1"
-                type="text"
-                placeholder="name"
-                value={newName}
-                onChange={(e) => setNewName(e.target.value)}
+                  className="mb-1"
+                  id="newname"
+                  type="text"
+                  placeholder="name"
+                  value={newName}
+                  onChange={(e) => setNewName(e.target.value)}
               />
               <Input
-                type="text"
-                placeholder="ip address"
-                value={newIp}
-                onChange={(e) => setNewIp(e.target.value)}
+                  type="text"
+                  placeholder="ip address"
+                  value={newIp}
+                  onChange={(e) => setNewIp(e.target.value)}
               />
             </div>
             <Button className="w-full" onClick={addEsp}>
