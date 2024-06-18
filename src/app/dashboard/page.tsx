@@ -13,7 +13,6 @@ const ESPList = [
 const tempData = [{ name: "temperature", value: 28 }];
 const humiData = [{ name: "humidity", value: 35 }];
 
-
 export default function Page() {
   return (
     <>

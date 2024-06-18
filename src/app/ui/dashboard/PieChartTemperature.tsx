@@ -34,9 +34,9 @@ export function PieChartTemperature({ data }: { data: any }) {
   };
   const calculateEndAngle = (temperature: number) => {
     return 270 - temperature * 8;
-  }
+  };
 
-    return (
+  return (
     <div className="flex flex-col justify-center w-full h-full">
       <h2 className="pr-5">Température :</h2>
       <PieChart width={200} height={200}>
