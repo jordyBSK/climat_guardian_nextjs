@@ -47,7 +47,7 @@ export function ChartElement() {
     },
   ];
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height={500}>
       <LineChart
         className="rounded-2xl border-2 border-gray-300"
         width={800}
