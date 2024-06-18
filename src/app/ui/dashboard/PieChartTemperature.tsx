@@ -37,7 +37,7 @@ export function PieChartTemperature({ data }: { data: any }) {
   };
 
   return (
-    <div className="flex flex-col justify-center w-full h-full">
+    <div className="flex h-full w-full flex-col justify-center">
       <h2 className="pr-5">Température :</h2>
       <PieChart width={200} height={200}>
         <Pie

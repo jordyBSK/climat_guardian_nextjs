@@ -39,7 +39,7 @@ export function PieChartHumidity({ data }: { data: any }) {
   };
 
   return (
-    <div className="flex flex-col justify-center w-full h-full">
+    <div className="flex h-full w-full flex-col justify-center">
       <h2 className="pr-5">Humidité :</h2>
       <PieChart width={200} height={200}>
         <Pie
